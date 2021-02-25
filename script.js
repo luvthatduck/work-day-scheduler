@@ -1,107 +1,68 @@
-var currentDate = document.getElementById("currentDay");
-var apptDescription = document.getElementById("textarea")
+// var currentDate = document.getElementById("currentDay");
+// var apptDescription = document.getElementById("textarea")
 
-var todayDate = function() {
-var currentDatedisplay = moment().format("dddd, MMM, Do, YYYY, LT");
-currentDate.textContent = currentDatedisplay
-};
-todayDate();
+// var todayDate = function() {
+// var currentDatedisplay = moment().format("dddd, MMM, Do, YYYY, LT");
+// currentDate.textContent = currentDatedisplay
+// };
+// todayDate();
 
 time = moment().format("LT");
 
-// var currentTime = function() {
-// // apply new class if task is near/over due date
-// if (moment().isAfter(time)) {
-//   $(taskEl).removeClass("past");
 
+
+
+function dayDisplay() {
+  var displayDay = $("<h2>")
+  displayDay.addClass("lead")
+  displayDay.text( moment().format("dddd, MMM Do YYYY, LT"))
+  $("#currentDay").append(displayDay)
+}
+
+
+
+$(document).ready(function () {
+ dayDisplay()
+
+});
+
+
+
+
+// var currentTime = function(blockNum) {
+// // apply new class if task is near/over due date
+// if (moment().isAfter(time); || moment().isAfter(time) ) {
+//   $("block"+ blockNum).removeClass("#past");
+ 
 // } 
-// else if (Math.abs(moment().diff(time, "days")) <= 2) {
-//   $(taskEl).addClass("list-group-item-warning");
+// else if (moment().isBefore(time)) {
+//   $(taskEl).addClass("#future");
 
 // }
-var time 
-var appt8 = document.getElementById("#time-block-8");
+var time
 
-document.getElementById("btn8").addEventListener("click", function(){
- var appt8El = document.querySelector("#block8").value;
-   localStorage.setItem("btn8", appt8El);
-  
-})
-
-// var loadAppts = function() { 
-//   localStorage.getItem("btn8");
-//   appt8El.textContent = "btn8";
-// };
-
-// loadAppts()
+var handleAppt = function (blockNum) {
+  var appt = $("#block" + blockNum)
+  $("#btn"+ blockNum).click(function(){
+    var apptEl = $("#block" + blockNum).val()
+    localStorage.setItem("btn" + blockNum, apptEl);
+  })
 
 
+  var loadAppts = function () {
+    appt.text(localStorage.getItem("btn" + blockNum));
 
+  };
+  loadAppts();
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById("btn9").addEventListener("click", function(){
-  var appt9El = document.querySelector("#block9").value;
-  localStorage.setItem("btn9", appt9El);
-})
-
-document.getElementById("btn10").addEventListener("click", function(){
-  console.log("good job10")
-})
-
-document.getElementById("btn11").addEventListener("click", function(){
-  console.log("good job11")
-})
-
-document.getElementById("btn12").addEventListener("click", function(){
-  console.log("good job12")
-})
-
-document.getElementById("btn1").addEventListener("click", function(){
-  console.log("good job1")
-})
-document.getElementById("btn2").addEventListener("click", function(){
-  console.log("good job2")
-})
-
-document.getElementById("btn3").addEventListener("click", function(){
-  console.log("good job3")
-})
-
-document.getElementById("btn4").addEventListener("click", function(){
-  console.log("good job4")
-})
-
-document.getElementById("btn5").addEventListener("click", function(){
-  console.log("good job5")
-})
-
-
-
-//click on 
-// save appts to localstorage
-
-
-
-
-
-// var saveAppts = function() {
-//   localStorage.setItem("textarea", JSON.stringify(apptDescription));
-// };
+handleAppt(8);
+handleAppt(9);
+handleAppt(10);
+handleAppt(11);
+handleAppt(12);
+handleAppt(1);
+handleAppt(2);
+handleAppt(3);
+handleAppt(4);
+handleAppt(5);
