@@ -1,15 +1,5 @@
-// var currentDate = document.getElementById("currentDay");
-// var apptDescription = document.getElementById("textarea")
-
-// var todayDate = function() {
-// var currentDatedisplay = moment().format("dddd, MMM, Do, YYYY, LT");
-// currentDate.textContent = currentDatedisplay
-// };
-// todayDate();
 
 time = moment().format("LT");
-
-
 
 
 function dayDisplay() {
@@ -19,15 +9,10 @@ function dayDisplay() {
   $("#currentDay").append(displayDay)
 }
 
-
-
 $(document).ready(function () {
   dayDisplay()
 
 });
-
-
-
 
 function currentTime(blockNum) {
   var today = new Date();
@@ -41,16 +26,12 @@ function currentTime(blockNum) {
 
 }
 
-
-// var time
-
 var handleAppt = function (blockNum) {
   var appt = $("#block" + blockNum)
   $("#btn" + blockNum).click(function () {
     var apptEl = $("#block" + blockNum).val()
     localStorage.setItem("btn" + blockNum, apptEl);
   })
-
 
   var loadAppts = function () {
     appt.text(localStorage.getItem("btn" + blockNum));
