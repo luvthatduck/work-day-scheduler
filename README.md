@@ -16,7 +16,7 @@ Have time slots change colors to reflect if current, past or future.
 
 	[Screenshot of Website](https://photos.app.goo.gl/TxNHKdyFqmMs4YuE8)
 
-	[deployed website link](https://luvthatduck.github.io/Passcode-BootCamp/)
+	[deployed website link](https://luvthatduck.github.io/Code-Quiz-Challenge/)
 
 
 
