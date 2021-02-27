@@ -31,20 +31,18 @@ $(document).ready(function () {
 
 function currentTime(blockNum) {
   var today = new Date();
-  var hours = today.getUTCHours();
-  if (hours = blockNum) {
+  var hours = today.getHours();
+  if (hours == parseInt(blockNum)) {
     $("#block" + blockNum).addClass("present")
   }
-  else if (hours < blockNum) {
+  else if (hours < parseInt(blockNum)) {
     $("#block" + blockNum).addClass("future")
   }
-  else {
-    $("#block" + blockNum).addClass("past")
-  }
+
 }
 
 
-var time
+// var time
 
 var handleAppt = function (blockNum) {
   var appt = $("#block" + blockNum)
@@ -67,10 +65,10 @@ currentTime(10);
 currentTime(11);
 currentTime(12);
 currentTime(13);
-currentTime(2);
-currentTime(3);
-currentTime(4);
-currentTime(5);
+currentTime(14);
+currentTime(15);
+currentTime(16);
+currentTime(17);
 
 
 handleAppt(8);
@@ -78,9 +76,9 @@ handleAppt(9);
 handleAppt(10);
 handleAppt(11);
 handleAppt(12);
-handleAppt(1);
-handleAppt(2);
-handleAppt(3);
-handleAppt(4);
-handleAppt(5);
+handleAppt(13);
+handleAppt(14);
+handleAppt(15);
+handleAppt(16);
+handleAppt(17);
 
